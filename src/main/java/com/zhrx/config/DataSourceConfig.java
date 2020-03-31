@@ -11,6 +11,7 @@ public class DataSourceConfig {
     @Bean
     public DataSource getDataSource(){
         PooledDataSource dataSource = new PooledDataSource();
+
         dataSource.setDriver("com.mysql.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/bd_n?serverTimezone=UTC");
         dataSource.setUsername("root");

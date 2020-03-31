@@ -1,5 +1,14 @@
 mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
   mapper-locations: classpath:mapper/*Mapper.xml
-  type-aliases-package: com.zhrx.entity
+#  type-aliases-package: com.zhrx.entity
+
+
 server:
   port: 9009
+logging:
+  config: classpath:log4j2.xml
+  com.zhrx.MybatisApplication: WARN
+
+
