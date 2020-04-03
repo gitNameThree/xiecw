@@ -8,6 +8,7 @@ import javax.sql.DataSource;
 
 @Configuration
 public class DataSourceConfig {
+
     @Bean
     public DataSource getDataSource(){
         PooledDataSource dataSource = new PooledDataSource();
