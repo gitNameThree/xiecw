@@ -1,10 +1,9 @@
-package com.zhrx.config;
+package com.sungod.config;
 
 import org.apache.ibatis.datasource.pooled.PooledDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 
 import javax.sql.DataSource;
 
@@ -12,7 +11,7 @@ import javax.sql.DataSource;
 public class DataSourceConfig {
 
     @Bean
-    public DataSource getDataSource(){
+    public DataSource getDataSource() {
         PooledDataSource dataSource = new PooledDataSource();
         dataSource.setDriver("com.mysql.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/bd_n?serverTimezone=UTC");
@@ -22,10 +21,8 @@ public class DataSourceConfig {
     }
 
     @Bean
-    public RedisTemplate<Object,Object> redisTemplate(RedisConnectionFactory redisConnectionFactory){
-        RedisTemplate<Object, Object> template = new RedisTemplate<>();
-        template.setConnectionFactory(redisConnectionFactory);
-        return template;
+    public ThreadPoolTaskScheduler threadPoolTaskScheduler() {
+        return new ThreadPoolTaskScheduler();
     }
 
 }

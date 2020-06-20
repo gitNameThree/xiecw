@@ -1,13 +1,11 @@
-package com.zhrx.controller;
+package com.sungod.controller;
 
-import com.zhrx.entity.User;
-import com.zhrx.service.impl.UserServiceImpl;
+import com.sungod.entity.User;
+import com.sungod.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import redis.clients.jedis.Jedis;
 
 import java.util.List;
 

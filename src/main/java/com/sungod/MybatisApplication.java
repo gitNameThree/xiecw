@@ -1,4 +1,4 @@
-package com.zhrx;
+package com.sungod;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @EnableCaching
 @SpringBootApplication
-@MapperScan("com.zhrx.dao")
+@MapperScan("com.sungod.dao")
 @EnableScheduling
 public class MybatisApplication {
 

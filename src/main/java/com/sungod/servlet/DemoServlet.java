@@ -1,4 +1,4 @@
-package com.zhrx.servlet;
+package com.sungod.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

@@ -1,6 +1,6 @@
-package com.zhrx.service.api;
+package com.sungod.service.api;
 
-import com.zhrx.entity.User;
+import com.sungod.entity.User;
 
 import java.util.List;
 

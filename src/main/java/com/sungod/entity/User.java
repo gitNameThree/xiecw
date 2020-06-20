@@ -1,4 +1,4 @@
-package com.zhrx.entity;
+package com.sungod.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
