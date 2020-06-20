@@ -3,6 +3,8 @@ package com.zhrx.config;
 import org.apache.ibatis.datasource.pooled.PooledDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.core.RedisTemplate;
 
 import javax.sql.DataSource;
 
@@ -12,12 +14,18 @@ public class DataSourceConfig {
     @Bean
     public DataSource getDataSource(){
         PooledDataSource dataSource = new PooledDataSource();
-
         dataSource.setDriver("com.mysql.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/bd_n?serverTimezone=UTC");
         dataSource.setUsername("root");
         dataSource.setPassword("000000");
         return dataSource;
-
     }
+
+    @Bean
+    public RedisTemplate<Object,Object> redisTemplate(RedisConnectionFactory redisConnectionFactory){
+        RedisTemplate<Object, Object> template = new RedisTemplate<>();
+        template.setConnectionFactory(redisConnectionFactory);
+        return template;
+    }
+
 }
