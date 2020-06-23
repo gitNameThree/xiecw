@@ -1,6 +1,7 @@
 package com.sungod.config;
 
 import org.apache.ibatis.datasource.pooled.PooledDataSource;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
@@ -23,6 +24,22 @@ public class DataSourceConfig {
     @Bean
     public ThreadPoolTaskScheduler threadPoolTaskScheduler() {
         return new ThreadPoolTaskScheduler();
+    }
+
+    /**
+     * 连接appium 的客户端
+     * @return
+     */
+    @Bean
+    public DesiredCapabilities getAppiumConnect(){
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("platformVersion", "10");
+        caps.setCapability("platformName", "Windows");
+        caps.setCapability("deviceName", "WindowsPC");
+        caps.setCapability("app", "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App");
+        caps.setCapability("newCommandTimeout", 2000);
+        return caps;
+
     }
 
 }
