@@ -33,11 +33,10 @@ public class DataSourceConfig {
     @Bean
     public DesiredCapabilities getAppiumConnect(){
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("platformVersion", "10");
-        caps.setCapability("platformName", "Windows");
-        caps.setCapability("deviceName", "WindowsPC");
-        caps.setCapability("app", "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App");
-        caps.setCapability("newCommandTimeout", 2000);
+        caps.setCapability("platformName", "Android");
+        caps.setCapability("deviceName", "OPPO R17 Pro");
+        caps.setCapability("appPackage", "com.ss.android.ugc.aweme");
+        caps.setCapability("appActivity", ".main.MainActivity");
         return caps;
 
     }

@@ -11,14 +11,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledFuture;
 
 @RestController
 @RequestMapping("/schedule")
 public class SchedultController {
+
 
     @Autowired
     private ThreadPoolTaskScheduler threadPoolTaskScheduler;
@@ -31,6 +32,11 @@ public class SchedultController {
 
     @RequestMapping("/startCommand")
     public String startSchedule() {
+        ExecutorService threadPool = Executors.newFixedThreadPool(3);
+        threadPool.
+        List list = new LinkedList();
+        Map map = new HashMap();
+        BrushVideoSchedule brushVideoSchedule = new BrushVideoSchedule();
         singUp = threadPoolTaskScheduler.schedule(new BrushVideoSchedule(),new Trigger(){
             @Override
             public Date nextExecutionTime(TriggerContext triggerContext){
